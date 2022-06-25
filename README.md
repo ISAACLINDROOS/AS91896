@@ -14,7 +14,7 @@ You need to think about the context this calculator would be used in, the end us
 # Prerequisites
 To successfully run this program, you need to first setup your Python development environment. Specifically, this program requires:
 
-## Applications:
+## Software & Extensions:
 * VS Code
 * The VS Code Python extension
 * Python 3 or later
@@ -53,6 +53,6 @@ When you create a new virtual environment, a prompt will be displayed to allow y
 
 This will add the path to the Python interpreter from the new virtual environment to your workspace settings. That environment will then be used when installing packages and running code through the Python extension.
 
-## Environments:
+## Modules:
 
 

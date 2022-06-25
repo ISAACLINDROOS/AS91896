@@ -12,7 +12,7 @@ You need to think about the context this calculator would be used in, the end us
 #### Your task is to create a functional prototype to suit the needs of your potential users. You may create a text-based program or a GUI interface (which will require a library like tkinter or PyQt5).
 
 
-# Repository Content:
+# Getting Started:
 
 
 

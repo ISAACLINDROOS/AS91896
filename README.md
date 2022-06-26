@@ -33,6 +33,7 @@ Allows you to manage separate package installations for different projects and i
 
 Installed with Anaconda and Miniconda. It can be used to manage both packages and virtual environments. Generally used for data science projects.
 
+
 ### Create a virtual environment
 
 To create a virtual environment, use the following command, where ".venv" is the name of the environment folder:
@@ -53,6 +54,59 @@ When you create a new virtual environment, a prompt will be displayed to allow y
 
 This will add the path to the Python interpreter from the new virtual environment to your workspace settings. That environment will then be used when installing packages and running code through the Python extension.
 
-## Modules:
+## Modules & Packages:
+
+* Tkinter
+* Tkinter Designer
+* git
+* pandas
+
+
+### Install Tkinter Designer
+
+There are Three options when installing Tkinter Designer:
+
+#### Install with `pip`
+
+```
+pip install tkdesigner
+```
+
+#### Install with `poetry`
+
+```
+poetry new <gui_project_name> && cd <gui_project_name>
+poetry add tkdesigner
+poetry install
+```
+
+#### To run Tkinter Designer from the source code, follow the instructions below:
+
+* Download the source files for Tkinter Designer by downloading it manually or using GIT.
+
+```
+git clone https://github.com/ParthJadhav/Tkinter-Designer.git
+```
+
+* Change your working directory to Tkinter Designer:
+
+```
+cd tkinter-designer
+```
+* Install the necessary dependencies by running:
+
+```
+pip install -r requirements.txt
+```
+
+> In the event that pip doesn't work, also try the following commands:
+
+pip3 install -r requirements.txt
+python -m pip install -r requirements.txt
+python3 -m pip install -r requirements.txt
+If this still doesn't work, ensure that Python is added to the PATH.
+This will install all requirements and Tkinter Designer. Before you use Tkinter Designer you need to create a Figma File with the below instructions.
+
+
 
 

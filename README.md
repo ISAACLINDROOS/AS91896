@@ -177,7 +177,7 @@ First, create a Frame that will serve as your Tkinter Window.
 
 * Use the <kbd>T</kbd> key to activate the text tool, then add text as desired.
 * Text does not have to be renamed for use in Tkinter Designer.
-* Explicitly press the Return Or Enter Key to move to the next line. 
+* Explicitly press the <kbd>Return</kbd> Or <kbd>Enter</kbd> Key to move to the next line. 
 
 ##### Entry (Single-Line User Input):
 
@@ -201,5 +201,5 @@ First, create a Frame that will serve as your Tkinter Window.
 
 * Add a rectangle to serve as a button in your GUI.
 * Optional: Add text for the button.
-* Select the button(Rectangle), and any optional text, then group them with <kbd>CTRL/⌘</kbd> + <kbd>G</kbd>.
+* Select the button (Rectangle), and any optional text, then group them with <kbd>CTRL/⌘</kbd> + <kbd>G</kbd>.
 * Name the group "Button".

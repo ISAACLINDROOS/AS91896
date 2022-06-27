@@ -171,4 +171,34 @@ First, create a Frame that will serve as your Tkinter Window.
 
 * Images can be created using shapes and/or images.
 * If you use multiple shapes/images, you must group them together by selecting them all and pressing <kbd>CTRL/⌘</kbd> + <kbd>G</kbd>
-* After that name the element or group as `"Image"`. 
+* After that name the element or group as `"Image"`.
+
+##### Text (Normal Text):
+
+Use the T key to activate the text tool, then add text as desired
+Text does not have to be renamed for use in Tkinter Designer
+Explicitly press the Return Or Enter Key to move to the next line. 
+
+Entry (Single-Line User Input)
+
+Activate the Rectangle tool with R
+Adjust the Rectangle to your liking
+Make sure the Rectangle is named "TextBox" 
+
+Text Area (Multi-Line User Input)
+
+Activate the Rectangle tool with R
+Adjust the Rectangle to your liking
+Make sure the Rectangle is named "TextArea"
+Rectangle
+
+Activate the Rectangle tool with R
+Adjust the Rectangle to your liking
+Make sure the Rectangle is named "Rectangle" 
+
+Normal Button
+
+Add rectangle to serve as a button in your GUI
+Optional: Add text for the button
+Select the button(Rectangle), and any optional text, then group them with CTRL/⌘ + G
+Name the group "Button"

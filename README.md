@@ -93,6 +93,7 @@ git clone https://github.com/ParthJadhav/Tkinter-Designer.git
 ```
 cd tkinter-designer
 ```
+
 * Install the necessary dependencies by running:
 
 ```
@@ -100,13 +101,25 @@ pip install -r requirements.txt
 ```
 
 > In the event that pip doesn't work, also try the following commands:
+> ```
+> pip3 install -r requirements.txt
+> ```
+> ```
+> python -m pip install -r requirements.txt
+> ```
+> ```
+> python3 -m pip install -r requirements.txt
+> ```
+> If this still doesn't work, ensure that Python is added to the `PATH`.
 
-pip3 install -r requirements.txt
-python -m pip install -r requirements.txt
-python3 -m pip install -r requirements.txt
-If this still doesn't work, ensure that Python is added to the PATH.
-This will install all requirements and Tkinter Designer. Before you use Tkinter Designer you need to create a Figma File with the below instructions.
+#### This will install all requirements and Tkinter Designer. Before you use Tkinter Designer you need to create a Figma File.
 
+### Install Git
+### Install Pandas
+
+- - - -
+
+# UI Design
 
 
 

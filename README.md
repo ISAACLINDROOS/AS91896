@@ -121,5 +121,11 @@ pip install -r requirements.txt
 
 # UI Design
 
+## Figma
 
+### Create a Figma Account
+
+### Figmas Design Formatting
+
+#### Element Guide:
 

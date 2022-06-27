@@ -175,30 +175,31 @@ First, create a Frame that will serve as your Tkinter Window.
 
 ##### Text (Normal Text):
 
-Use the T key to activate the text tool, then add text as desired
-Text does not have to be renamed for use in Tkinter Designer
-Explicitly press the Return Or Enter Key to move to the next line. 
+* Use the <kbd>T</kbd> key to activate the text tool, then add text as desired.
+* Text does not have to be renamed for use in Tkinter Designer.
+* Explicitly press the Return Or Enter Key to move to the next line. 
 
-Entry (Single-Line User Input)
+##### Entry (Single-Line User Input):
 
-Activate the Rectangle tool with R
-Adjust the Rectangle to your liking
-Make sure the Rectangle is named "TextBox" 
+* Activate the Rectangle tool with <kbd>R</kbd>.
+* Adjust the Rectangle to your liking.
+* Make sure the Rectangle is named "TextBox".
 
-Text Area (Multi-Line User Input)
+##### Text Area (Multi-Line User Input):
 
-Activate the Rectangle tool with R
-Adjust the Rectangle to your liking
-Make sure the Rectangle is named "TextArea"
-Rectangle
+* Activate the Rectangle tool with <kbd>R</kbd>.
+* Adjust the Rectangle to your liking.
+* Make sure the Rectangle is named "TextArea".
 
-Activate the Rectangle tool with R
-Adjust the Rectangle to your liking
-Make sure the Rectangle is named "Rectangle" 
+##### Rectangle:
 
-Normal Button
+* Activate the Rectangle tool with <kbd>R</kbd>.
+* Adjust the Rectangle to your liking.
+* Make sure the Rectangle is named "Rectangle".
 
-Add rectangle to serve as a button in your GUI
-Optional: Add text for the button
-Select the button(Rectangle), and any optional text, then group them with CTRL/⌘ + G
-Name the group "Button"
+##### Normal Button:
+
+* Add a rectangle to serve as a button in your GUI.
+* Optional: Add text for the button.
+* Select the button(Rectangle), and any optional text, then group them with <kbd>CTRL/⌘</kbd> + <kbd>G</kbd>.
+* Name the group "Button".

@@ -60,7 +60,7 @@ This will add the path to the Python interpreter from the new virtual environmen
 * Tkinter Designer
 * git
 * pandas
-
+- - - -
 
 ### Installing Tkinter Designer
 
@@ -152,7 +152,7 @@ You can also [download an installer for Git rom the official web site](https://g
 
 Once you have Git installed, follow the instructions in **Getting Ready**, below.
 
-# Getting Ready - Git
+#### Getting Ready - Git
 
 Now that you've got Git installed, let's make sure you can access it, and that it's fully set up for you to use.
 
@@ -165,8 +165,39 @@ You'll also want to set up your email address.
     git config --global user.email "YOUR EMAIL ADDRESS"
 
 Assuming these commands run without errors, you're good to go! Otherwise, you may need to double-check your Git installation.
+- - - -
+### Installing Pandas
+#### Installation:
+If you have Python and PIP already installed on a system, then installation of Pandas is very easy.
 
+Install it using this command:
 
+```
+C:\Users\Your Name>pip install pandas
+```
+#### Import Pandas:
+Once Pandas is installed, import it in your applications by adding the `import` keyword:
+
+````
+import pandas
+````
+Now Pandas is imported and ready to use.
+
+#### Pandas as pd:
+Pandas is usually imported under the `pd` alias.
+Create an alias with the `as` keyword while importing:
+````
+import pandas as pd
+````
+Now the Pandas package can be referred to as `pd` instead of `pandas`.
+
+### Checking Pandas Version
+The version string is stored under `__version__` attribute.
+````
+import pandas as pd
+
+print(pd.__version__)
+````
 - - - -
 
 # UI Design

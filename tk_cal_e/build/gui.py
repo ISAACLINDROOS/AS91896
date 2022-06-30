@@ -5,6 +5,7 @@ from pathlib import Path
 # from tkinter import *
 # Explicit imports to satisfy Flake8
 from tkinter import Tk, Canvas, Entry, Text, Button, PhotoImage
+import tkinter as tk
 
 
 OUTPUT_PATH = Path(__file__).parent
@@ -15,11 +16,13 @@ def relative_to_assets(path: str) -> Path:
     return ASSETS_PATH / Path(path)
 
 
-window = Tk()
+window = tk.Tk()
 
 window.geometry("1000x600")
 window.configure(bg = "#FFFFFF")
 window.title("Laptop Price Calculator")
+logo = tk.PhotoImage(file=ASSETS_PATH / "usd-circle.png")
+window.call('wm', 'iconphoto', window._w, logo)
 
 canvas = Canvas(
     window,

@@ -286,4 +286,4 @@ First, create a Frame that will serve as your Tkinter Window.
 * Name the group "Button".
 
 - - - -
-# Using the Program
+# How to use the Laptop Price Calculator

@@ -15,8 +15,8 @@ You need to think about the context this calculator would be used in, the end us
 
 #### Achievement Standard: 
 * [Documentation](https://github.com/ISAACLINDROOS/AS91896/tree/main/Documentation)
-* [Testing](https://github.com/ISAACLINDROOS/AS91897/tree/main/Testing)
-* [Data](https://github.com/ISAACLINDROOS/AS91897/tree/main/Data)
+* [Releases](https://github.com/ISAACLINDROOS/AS91896/tree/main/Releases)
+* [Data](https://github.com/ISAACLINDROOS/AS91896/tree/main/Data)
 
 #### Program:
 

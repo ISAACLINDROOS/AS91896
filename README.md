@@ -284,3 +284,6 @@ First, create a Frame that will serve as your Tkinter Window.
 * Optional: Add text for the button.
 * Select the button (Rectangle), and any optional text, then group them with <kbd>CTRL/⌘</kbd> + <kbd>G</kbd>.
 * Name the group "Button".
+
+- - - -
+# Using the Program

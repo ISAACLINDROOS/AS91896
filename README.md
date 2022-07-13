@@ -10,6 +10,16 @@ Parents and students would like a Budget Laptop Calculator to assist them in fig
 You need to think about the context this calculator would be used in, the end users and the usability of such a tool and plan accordingly. You are encouraged to refine and redesign your calculator interface based on your own goals.  
 
 #### Your task is to create a functional prototype to suit the needs of your potential users. You may create a text-based program or a GUI interface (which will require a library like tkinter or PyQt5).
+
+# Repository Content:
+
+#### Achievement Standard: 
+* [Documentation](https://github.com/ISAACLINDROOS/AS91896/tree/main/Documentation)
+* [Testing](https://github.com/ISAACLINDROOS/AS91897/tree/main/Testing)
+* [Data](https://github.com/ISAACLINDROOS/AS91897/tree/main/Data)
+
+#### Program:
+
 - - - -
 # How to use the Laptop Price Calculator
 

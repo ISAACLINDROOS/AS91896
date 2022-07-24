@@ -23,3 +23,4 @@ You need to think about the context this calculator would be used in, the end us
 - - - -
 # How to use the Laptop Price Calculator
 
+This laptop calculator is designed to help

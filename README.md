@@ -24,7 +24,7 @@ You need to think about the context this calculator would be used in, the end us
 * [Data](https://github.com/ISAACLINDROOS/AS91896/tree/main/Data)
 
 #### Program (Application):
-
+* [Latest Release](https://github.com/ISAACLINDROOS/AS91896/tree/main/Releases)
 - - - -
 # How to use the Laptop Price Calculator
 

@@ -45,8 +45,6 @@ OUTPUT_PATH = Path(__file__).parent
 ASSETS_PATH = OUTPUT_PATH / Path("./assets")
 
 # Set default PATH TO ASSETS:
-
-
 def relative_to_assets(path: str) -> Path:
     return ASSETS_PATH / Path(path)
 
@@ -115,7 +113,6 @@ def user_select_purpose_home():
 
 
 def user_select_os_windows():
-
     df.update(os_windows_df, overwrite=True)
     print("Operating System Select (Windows):\n", df)
 
@@ -308,16 +305,19 @@ class ResultsWindowGUI:
 
 ResultsWindow = ResultsWindowGUI()
 
+
+# Function "Refresh Window":
 def refresh():
     window.update()
 
+  
 # Function "Quit Window + Confirmation":
 def confirm():
     answer = askyesno(title='Exit Confirmation',
                       message='Are you sure that you want to quit?', icon='warning')
     if answer:
         closewindow()
-
+     
 
 # Function "Generation + Confirmation":
 def confirmgen():

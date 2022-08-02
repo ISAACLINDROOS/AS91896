@@ -853,5 +853,20 @@ button_27.place(
     height=18.44775390625
 )
 
+button_image_28 = PhotoImage(
+    file=relative_to_assets("button_28.png"))
+button_28 = Button(
+    image=button_image_28,
+    borderwidth=0,
+    highlightthickness=0,
+    command=refresh,
+    relief="flat"
+)
+button_28.place(
+    x=915.0,
+    y=549.0,
+    width=72.0,
+    height=18.44775390625
+)
 window.resizable(False, False)
 window.mainloop()

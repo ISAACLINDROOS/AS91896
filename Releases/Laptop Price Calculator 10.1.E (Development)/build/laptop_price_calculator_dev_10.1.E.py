@@ -40,15 +40,15 @@ import os
 import pydotplus
 
 
-
 # Set local PATH:
 OUTPUT_PATH = Path(__file__).parent
 ASSETS_PATH = OUTPUT_PATH / Path("./assets")
 
 # Set default PATH TO ASSETS:
+
+
 def relative_to_assets(path: str) -> Path:
     return ASSETS_PATH / Path(path)
-
 
 
 # Pandas Dataframe Configuration: (Set Columns)
@@ -64,6 +64,7 @@ df = df.dropna(axis=0)
 df = df.dropna().reset_index(drop=True)
 print(df)
 
+
 # Function: "Display settings (Pandas dataframe)"
 def set_pandas_display_options() -> None:
     display = pd.options.display
@@ -71,6 +72,7 @@ def set_pandas_display_options() -> None:
     display.max_rows = 1000
     display.max_colwidth = 199
     display.width = 1000
+
 
 set_pandas_display_options()
 
@@ -113,6 +115,7 @@ def user_select_purpose_home():
 
 
 def user_select_os_windows():
+
     df.update(os_windows_df, overwrite=True)
     print("Operating System Select (Windows):\n", df)
 
@@ -222,9 +225,21 @@ def user_select_brand_msi():
     print(df)
 
 
-# Datalabel readout Configuration:
-datalabel = df
+def results_dataframe():
+    # Pandas Dataframe Configuration: (Set Columns)
+    columns = ['brand', 'model', 'processor_brand', 'processor_name', 'processor_gnrtn', 'ram_gb', 'ram_type', 'ssd', 'hdd', 'os', 'os_bit', 'graphic_card_gb',
+               'weight', 'display-size', 'warranty', 'touchscreen', 'msoffice', 'latest_price', 'old_price', 'discount', 'star_rating', 'ratings', 'reviews']
+    df = pd.read_csv(ASSETS_PATH / "laptops_dataset_clean_refined.csv",
+                     usecols=['os', 'ssd', 'ram_gb', 'display_size', 'touchscreen', 'brand'])
+    df = df.dropna()
+    print("Main Dataframe:\n", df)
+    df = df.dropna(axis=0)
+    df = df.dropna().reset_index(drop=True)
+    print(df)
 
+
+# Datalabel readout Configuration:
+datalabel = results_dataframe
 
 
 # Create a Results GUI class to connect the Results GUI and the Main Window's GUI:
@@ -293,7 +308,8 @@ class ResultsWindowGUI:
 
 ResultsWindow = ResultsWindowGUI()
 
-
+def refresh():
+    window.update()
 
 # Function "Quit Window + Confirmation":
 def confirm():
@@ -330,7 +346,6 @@ def save_file():
 # Function "Set Label text":
 def get_input():
     label.config(text="")
-
 
 
 # Tkinter GUI: Initial Window settings (Main):
@@ -868,5 +883,6 @@ button_28.place(
     width=72.0,
     height=18.44775390625
 )
+
 window.resizable(False, False)
 window.mainloop()

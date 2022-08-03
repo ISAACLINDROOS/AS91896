@@ -49,13 +49,14 @@ def relative_to_assets(path: str) -> Path:
     return ASSETS_PATH / Path(path)
 
 
-# Pandas Dataframe Configuration: (Set Columns)
+# Pandas Main Dataframe Configuration: (Set Columns)
 columns = ['brand', 'model', 'processor_brand', 'processor_name', 'processor_gnrtn', 'ram_gb', 'ram_type', 'ssd', 'hdd', 'os', 'os_bit', 'graphic_card_gb',
            'weight', 'display-size', 'warranty', 'touchscreen', 'msoffice', 'latest_price', 'old_price', 'discount', 'star_rating', 'ratings', 'reviews']
 df = pd.read_csv(ASSETS_PATH / "laptops_dataset_clean_refined.csv",
                  usecols=['os', 'ssd', 'ram_gb', 'display_size', 'touchscreen', 'brand'])
 
-# Pandas Dataframe refinement: (Removing all Rows with NaN Values within the Main Dataframe & Updateing the Index axis Accordingly)
+
+# Pandas Main Dataframe refinement: (Removing all Rows with NaN Values within the Main Dataframe & Updateing the Index axis Accordingly)
 df = df.dropna()
 print("Main Dataframe:\n", df)
 df = df.dropna(axis=0)
@@ -63,7 +64,19 @@ df = df.dropna().reset_index(drop=True)
 print(df)
 
 
-# Function: "Display settings (Pandas dataframe)"
+# Pandas Results Dataframe Configuration: (Set Columns)
+columns = ['brand', 'model', 'processor_brand', 'processor_name', 'processor_gnrtn', 'ram_gb', 'ram_type', 'ssd', 'hdd', 'os', 'os_bit', 'graphic_card_gb',
+           'weight', 'display-size', 'warranty', 'touchscreen', 'msoffice', 'latest_price', 'old_price', 'discount', 'star_rating', 'ratings', 'reviews']
+df_results = pd.read_csv(ASSETS_PATH / "laptops_dataset_clean_refined.csv",
+                 usecols=['os', 'ssd', 'ram_gb', 'display_size', 'touchscreen', 'brand'])
+
+# Pandas Results Dataframe refinement: (Removing all Rows with NaN Values within the Main Dataframe & Updateing the Index axis Accordingly)
+df_results = df.dropna()
+df_results = df.dropna(axis=0)
+df_results = df.dropna().reset_index(drop=True)
+
+
+# Function: "Display settings (ALL Pandas dataframes)"
 def set_pandas_display_options() -> None:
     display = pd.options.display
     display.max_columns = 1000
@@ -71,8 +84,9 @@ def set_pandas_display_options() -> None:
     display.max_colwidth = 199
     display.width = 1000
 
-
 set_pandas_display_options()
+
+
 
 # Individual dataframe Configuration:
 os_windows_df = df.os == "Windows"
@@ -168,22 +182,22 @@ def user_select_ram_32():
 
 
 def user_select_display_size_13_3():
-    df.update(display_size_13_3_df, overwrite=True)
+    df.update(display_size_13_3_df, overwrite=False)
     print(df)
 
 
 def user_select_display_size_14():
-    df.update(display_size_14_df, overwrite=True)
+    df.update(display_size_14_df, overwrite=False)
     print(df)
 
 
 def user_select_display_size_15_6():
-    df.update(display_size_15_6_df, overwrite=True)
+    df.update(display_size_15_6_df, overwrite=False)
     print(df)
 
 
 def user_select_display_size_16():
-    df.update(display_size_16_df, overwrite=True)
+    df.update(display_size_16_df, overwrite=False)
     print(df)
 
 
@@ -222,21 +236,8 @@ def user_select_brand_msi():
     print(df)
 
 
-def results_dataframe():
-    # Pandas Dataframe Configuration: (Set Columns)
-    columns = ['brand', 'model', 'processor_brand', 'processor_name', 'processor_gnrtn', 'ram_gb', 'ram_type', 'ssd', 'hdd', 'os', 'os_bit', 'graphic_card_gb',
-               'weight', 'display-size', 'warranty', 'touchscreen', 'msoffice', 'latest_price', 'old_price', 'discount', 'star_rating', 'ratings', 'reviews']
-    df = pd.read_csv(ASSETS_PATH / "laptops_dataset_clean_refined.csv",
-                     usecols=['os', 'ssd', 'ram_gb', 'display_size', 'touchscreen', 'brand'])
-    df = df.dropna()
-    print("Main Dataframe:\n", df)
-    df = df.dropna(axis=0)
-    df = df.dropna().reset_index(drop=True)
-    print(df)
-
-
 # Datalabel readout Configuration:
-datalabel = results_dataframe
+datalabel = df_results
 
 
 # Create a Results GUI class to connect the Results GUI and the Main Window's GUI:
@@ -305,25 +306,27 @@ class ResultsWindowGUI:
 
 ResultsWindow = ResultsWindowGUI()
 
-
 # Function "Refresh Window":
 def refresh():
     window.update()
 
-  
+
 # Function "Quit Window + Confirmation":
 def confirm():
     answer = askyesno(title='Exit Confirmation',
                       message='Are you sure that you want to quit?', icon='warning')
     if answer:
         closewindow()
-     
+
 
 # Function "Generation + Confirmation":
 def confirmgen():
     answer = askyesno(title='Confirm Price Generation',
                       message='Are you sure that you want to Generate results?')
     if answer:
+        df['count'] = df[['os', 'ssd', 'ram_gb', 'touchscreen', 'brand']].sum(axis=1)
+        rslt_df = df[df['count'] > 3]
+        print(rslt_df)
         ResultsWindow.showresultswindow()
 
 

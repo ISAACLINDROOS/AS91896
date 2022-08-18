@@ -67,8 +67,7 @@ print(df)
 # Pandas Results Dataframe Configuration: (Set Columns)
 columns = ['brand', 'model', 'processor_brand', 'processor_name', 'processor_gnrtn', 'ram_gb', 'ram_type', 'ssd', 'hdd', 'os', 'os_bit', 'graphic_card_gb',
            'weight', 'display-size', 'warranty', 'touchscreen', 'msoffice', 'latest_price', 'old_price', 'discount', 'star_rating', 'ratings', 'reviews']
-df_results = pd.read_csv(ASSETS_PATH / "laptops_dataset_clean_refined.csv",
-                 usecols=['os', 'ssd', 'ram_gb', 'display_size', 'touchscreen', 'brand'])
+df_results = pd.read_csv(ASSETS_PATH / "laptops_dataset_clean_refined_dataref.csv")
 
 # Pandas Results Dataframe refinement: (Removing all Rows with NaN Values within the Main Dataframe & Updateing the Index axis Accordingly)
 df_results = df.dropna()
@@ -236,13 +235,20 @@ def user_select_brand_msi():
     print(df)
 
 
-# Datalabel readout Configuration:
-datalabel = df_results
-
 
 # Create a Results GUI class to connect the Results GUI and the Main Window's GUI:
 class ResultsWindowGUI:
     def showresultswindow(self):
+        df['count'] = df[['os', 'ssd', 'ram_gb', 'touchscreen', 'brand']].sum(axis=1)
+        rslt_df = df.nlargest(10, 'count')
+        print(rslt_df)
+        data_index = rslt_df.index
+        print(data_index)
+        
+        # Datalabel readout Configuration:
+        dataprintout = df_results.loc[df_results.index[data_index]]
+        datalabel = dataprintout
+        
         results = tk.Toplevel()
         results.geometry("1000x600")
         results.title("Results")
@@ -306,6 +312,8 @@ class ResultsWindowGUI:
 
 ResultsWindow = ResultsWindowGUI()
 
+
+
 # Function "Refresh Window":
 def refresh():
     window.update()
@@ -324,9 +332,6 @@ def confirmgen():
     answer = askyesno(title='Confirm Price Generation',
                       message='Are you sure that you want to Generate results?')
     if answer:
-        df['count'] = df[['os', 'ssd', 'ram_gb', 'touchscreen', 'brand']].sum(axis=1)
-        rslt_df = df[df['count'] > 3]
-        print(rslt_df)
         ResultsWindow.showresultswindow()
 
 
@@ -342,7 +347,7 @@ def hidewindow():
 
 # Function "Save File":
 def save_file():
-    f = asksaveasfile(initialfile='Untitled.pdf', defaultextension=".pdf", filetypes=[
+    f = asksaveasfile(initialfile='My Results.pdf', defaultextension=".pdf", filetypes=[
                       ("All Files", "*.*"), ("Text Document", "*.txt"), ("Python File", "*.py"), ("PDF File", "*.pdf")])
 
 
